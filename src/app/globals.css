@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --cixio-blue:  #1259FB;
+  --cixio-navy:  #1236AE;
+  --cixio-dark:  #0B1E6B;
+  --cixio-light: #EEF3FF;
+  --cixio-bg:    #F4F7FF;
+  --cixio-hover: #0E4DE0;
+  --cixio-muted: #6B88D4;
+}
+
+html {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--cixio-bg);
+  color: #111827;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--cixio-light); }
+::-webkit-scrollbar-thumb { background: var(--cixio-muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cixio-navy); }
+
+/* Cixio button utility */
+@layer components {
+  .btn-cixio {
+    @apply bg-cixio-blue text-white font-semibold px-5 py-2.5 rounded-lg
+           hover:bg-cixio-hover transition-colors duration-150 focus:outline-none
+           focus:ring-2 focus:ring-cixio-blue focus:ring-offset-2 disabled:opacity-50;
+  }
+  .card-cixio {
+    @apply bg-white rounded-xl border border-cixio-light shadow-sm;
+  }
+  .input-cixio {
+    @apply w-full border border-gray-200 rounded-lg px-3 py-2.5 bg-white
+           focus:outline-none focus:ring-2 focus:ring-cixio-blue focus:border-cixio-blue
+           transition text-sm;
+  }
+}
