@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/documents", label: "Documents" },
   { href: "/todos", label: "Todos" },
   { href: "/queues", label: "Queues" },
+  { href: "/profile", label:"Profile"}
 ];
 
 const AUTH_PATHS = ["/login", "/register"];
@@ -59,6 +60,7 @@ export default function NavBar() {
         </div>
       </div>
 
+
       {/* Right side */}
       <div className="flex items-center gap-3">
         {user && (
@@ -75,6 +77,8 @@ export default function NavBar() {
         >
           Sign out
         </button>
+
+
       </div>
     </nav>
   );
